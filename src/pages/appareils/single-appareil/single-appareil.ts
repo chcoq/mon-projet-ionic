@@ -3,27 +3,27 @@ import {NavParams, ViewController} from 'ionic-angular';
 import {ViewCompiler} from "@angular/compiler";
 
 
-
 @Component({
-  selector: 'page-single-appareil',
-  templateUrl: 'single-appareil.html',
+    selector: 'page-single-appareil',
+    templateUrl: 'single-appareil.html',
 })
-export class SingleAppareilPage implements OnInit{
+export class SingleAppareilPage implements OnInit {
 
-  appareil:{
-    name : string,
-    description: string[];
-}
+    appareil: {
+        name: string,
+        description: string[];
+    }
 
 
-  constructor(public navParams: NavParams,public  viewCtrl: ViewController) {
-  }
+    constructor(public navParams: NavParams, public  viewCtrl: ViewController) {
+    }
 
-  ngOnInit(){
-    this.appareil = this.navParams.get('appareil');
-  }
-  dismissModal(){
-    this.viewCtrl.dismiss();
-  }
+    ngOnInit() {
+        this.appareil = this.navParams.get('appareil');
+    }
+
+    dismissModal() {
+        this.viewCtrl.dismiss();
+    }
 
 }
