@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AppareilsPage} from '../appareils/appareils'
+import { AppareilsPage} from '../appareils/appareils';
 
 @Component({
   selector: 'page-home',
@@ -8,10 +7,6 @@ import { AppareilsPage} from '../appareils/appareils'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  appareilsPage = AppareilsPage;
 
-  }
-onGoToAppareils(){
-    this.navCtrl.push(AppareilsPage);
-}
 }
