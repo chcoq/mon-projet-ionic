@@ -9,9 +9,37 @@ import {SingleAppareilPage} from "./single-appareil/single-appareil";
 
 export class AppareilsPage {
 
-    constructor(private navCtrl: NavController){}
-    onLoadAppareil(name: string){
-        this.navCtrl.push(SingleAppareilPage,{appareilName: name});
+    constructor(private navCtrl: NavController){
+
+    }
+
+    appareilsList =[
+    {
+        name: 'Machine à laver',
+        description:[
+            'Volume: 6 litres',
+            'temps de lavage: 2 heures',
+            'Consomation:173 kWh/an'
+        ]
+    },
+    {
+        name: 'Télévision',
+        description: [
+            'Dimensions: pouces',
+            'Consommation : 22 kWh/an'
+        ]
+    },
+    {
+        name: 'Ordinateur',
+        description: [
+            'Marque: Asus',
+            'Consommation: 500 kWh/an'
+        ]
+    },
+];
+    onLoadAppareil(appareil:{name: string, description: string[]}){
+        this.navCtrl.push(SingleAppareilPage,{appareil: appareil});
+
     }
 }
 
