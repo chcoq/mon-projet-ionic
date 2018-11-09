@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {ModalController} from "ionic-angular";
 import {SingleAppareilPage} from "./single-appareil/single-appareil";
+import {Appareil} from "../../models/Appareil";
+import {AppareilsService} from "../../services/appareils.service";
 
 @Component({
     selector: 'page-appareils',
@@ -9,37 +11,19 @@ import {SingleAppareilPage} from "./single-appareil/single-appareil";
 
 export class AppareilsPage {
 
-    constructor(private modalCtrl: ModalController) {
+    appareilsList: Appareil[];
 
+    constructor(private modalCtrl: ModalController,
+    private appareilsService : AppareilsService) {}
+
+    ionViewWillEnter(){
+        this.appareilsList = this.appareilsService.appareilsList.slice();
     }
 
-    appareilsList = [
-        {
-            name: 'Machine à laver',
-            description: [
-                'Volume: 6 litres',
-                'temps de lavage: 2 heures',
-                'Consomation:173 kWh/an'
-            ]
-        },
-        {
-            name: 'Télévision',
-            description: [
-                'Dimensions: pouces',
-                'Consommation : 22 kWh/an'
-            ]
-        },
-        {
-            name: 'Ordinateur',
-            description: [
-                'Marque: Asus',
-                'Consommation: 500 kWh/an'
-            ]
-        },
-    ];
 
-    onLoadAppareil(appareil: { name: string, description: string[] }) {
-        let modal = this.modalCtrl.create(SingleAppareilPage, {appareil: appareil});
+
+    onLoadAppareil(index: number) {
+        let modal = this.modalCtrl.create(SingleAppareilPage, {index: index});
         modal.present();
 
     }
