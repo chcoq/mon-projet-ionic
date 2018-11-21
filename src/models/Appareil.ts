@@ -1,10 +1,8 @@
-export class Appareil{
+export class Appareil {
+    description: string[];
+    isOn: boolean;
 
-    description : string[];
-    isOn : boolean;
-
-    constructor(public  name: string){
-
+    constructor(public  name: string) {
         this.isOn = false;
     }
 }

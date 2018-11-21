@@ -1,7 +1,7 @@
 import {Appareil} from "../models/Appareil";
 
 export class AppareilsService {
-    appareilsList : Appareil[] = [
+    appareilsList: Appareil[] = [
         {
             name: 'Machine à laver',
             description: [
@@ -9,7 +9,7 @@ export class AppareilsService {
                 'temps de lavage: 2 heures',
                 'Consomation:173 kWh/an'
             ],
-            isOn :true
+            isOn: true
         },
         {
             name: 'Télévision',
@@ -17,7 +17,7 @@ export class AppareilsService {
                 'Dimensions: pouces',
                 'Consommation : 22 kWh/an'
             ],
-            isOn :true
+            isOn: true
         },
         {
             name: 'Ordinateur',
@@ -25,7 +25,7 @@ export class AppareilsService {
                 'Marque: Asus',
                 'Consommation: 500 kWh/an'
             ],
-            isOn :false
-        },
+            isOn: false
+        }
     ];
 }

@@ -11,6 +11,7 @@ import {SingleAppareilPage} from "../pages/appareils/single-appareil/single-appa
 import {SettingsPage} from "../pages/settings/settings";
 import {TabsPage} from "../pages/tabs/tabs";
 import {AppareilsService} from "../services/appareils.service";
+import {OptionsPage} from "../pages/options/options";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {AppareilsService} from "../services/appareils.service";
         SingleAppareilPage,
         SettingsPage,
         TabsPage,
+        OptionsPage,
     ],
     imports: [
         BrowserModule,
@@ -34,6 +36,7 @@ import {AppareilsService} from "../services/appareils.service";
         SingleAppareilPage,
         SettingsPage,
         TabsPage,
+        OptionsPage,
     ],
     providers: [
         StatusBar,

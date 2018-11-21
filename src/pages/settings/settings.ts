@@ -1,15 +1,16 @@
-
 import {Component} from "@angular/core";
-import {AlertController} from "ionic-angular";
+import {AlertController, MenuController} from "ionic-angular";
 
 @Component({
-    selector:'page-settings',
-    templateUrl:'settings.html'
+    selector: 'page-settings',
+    templateUrl: 'settings.html'
 })
-export class SettingsPage{
-    constructor(private  alertCtrl: AlertController){}
+export class SettingsPage {
+    constructor(private  alertCtrl: AlertController,
+                private  menuCtrl: MenuController) {
+    }
 
-    onToggleLights(){
+    onToggleLights() {
         let alert = this.alertCtrl.create({
             title: 'Êtes-vous certain(e) de vouloir continuer ?',
             subTitle: 'Cette action allumera ou éteindra toutes les lumières de la maison !',
@@ -27,4 +28,7 @@ export class SettingsPage{
         alert.present();
     }
 
+    onToggleMenu() {
+        this.menuCtrl.open();
+    }
 }
